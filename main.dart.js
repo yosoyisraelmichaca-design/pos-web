@@ -34721,7 +34721,7 @@ $.Q9=$.Q6=null}if($.Qz() instanceof A.r3)$.bcN=A.btl()
 s=2
 return A.f(A.ef(null,t.H),$async$afw)
 case 2:s=3
-return A.f(A.aDA("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6ImFub24iLCJleHAiOjE5ODM4MTI5OTZ9.CRXP1A7WOeoJeXxjNni43kdQwgnWNReilDMblYTn_I0","http://127.0.0.1:54321"),$async$afw)
+return A.f(A.aDA("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNicnB5dXNzaG5ieHRvaWNubG1sIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTAzNzUxMjIsImV4cCI6MjEwNTk1MTEyMn0.RgYOrB-uKXFxNxAMptw29JbLT3Bhkf5kCKd-uigcydc","https://sbrpyusshnbxtoicnlml.supabase.co"),$async$afw)
 case 3:if($.a7==null)A.aFR()
 q=$.a7
 q.toString
