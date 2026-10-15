@@ -149373,7 +149373,7 @@ s=s==null?0:A.af(s)
 s=$.c9().an(m*(1+s/100))
 m=l.r
 m=m==null?q:m.h(0,n)
-m=new A.yZ(B.HH,"Licencia desactivada","Terminaron los 3 d\xedas de tolerancia sin pago. Tus datos est\xe1n guardados: al renovar ("+s+" MXN con IVA, con "+B.n.aC(m==null?0:A.af(m),0)+"% de recargo por retraso) vuelves a entrar como estabas.",B.bkU,new A.aa("Ya pagu\xe9: revisar",l.gMz()),q)
+m=new A.yZ(B.HH,"Licencia desactivada","Terminaron los 5 d\xedas de tolerancia sin pago. Tus datos est\xe1n guardados: al renovar ("+s+" MXN con IVA, con "+B.n.aC(m==null?0:A.af(m),0)+"% de recargo por retraso) vuelves a entrar como estabas.",B.bkU,new A.aa("Ya pagu\xe9: revisar",l.gMz()),q)
 break A}m.a.toString
 m=B.a0T
 break A}return m},
