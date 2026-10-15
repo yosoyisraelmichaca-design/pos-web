@@ -152859,7 +152859,7 @@ if(i==null||j.a!=null||t.CG.a(i.h(0,k)).mS(new A.b2(Date.now(),0,!1)))return B.b
 s=A.ep("HH:mm",l).an(t.CG.a(i.h(0,k)).eI())
 r=i.h(0,"plan")
 A:{if("maestra"===r){q="Maestra"
-break A}if("manager"===r){q="Manager"
+break A}if("manager"===r){q="Gerente"
 break A}if("gerente"===r){q="Caja"
 break A}q=A.e(r)
 break A}p=A.e(i.h(0,"usado"))
