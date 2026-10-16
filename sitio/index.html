@@ -277,6 +277,20 @@ p { margin: 0; }
   html { scroll-behavior: auto; }
   .boton:hover { transform: none; }
 }
+
+/* Ventana de compra: plan y total antes de ir al sistema. */
+.ventana { border: 0; padding: 0; border-radius: 16px; background: var(--superficie); color: var(--tinta);
+  width: min(480px, calc(100vw - 32px)); box-shadow: var(--sombra); }
+.ventana::backdrop { background: rgba(7, 18, 16, .55); }
+.ventana-cuerpo { padding: 24px; display: grid; gap: 16px; }
+.ventana-cabeza { display: flex; justify-content: space-between; align-items: start; gap: 12px; }
+.ventana h2 { font-size: 24px; }
+.cerrar-ventana { font: inherit; font-size: 24px; line-height: 1; background: none; border: 0; color: var(--tinta-suave); cursor: pointer; padding: 4px 8px; border-radius: 8px; }
+.ventana-total { background: color-mix(in srgb, var(--marca) 10%, var(--superficie)); border-radius: var(--radio); padding: 16px; }
+.ventana-total .monto { font-size: 36px; font-weight: 800; line-height: 1.1; }
+.ventana-total .detalle { color: var(--tinta-suave); font-size: 15px; }
+.ventana-pasos { margin: 0; padding-left: 20px; color: var(--tinta-suave); font-size: 15px; display: grid; gap: 4px; }
+.ventana-acciones { display: grid; gap: 8px; }
 </style>
 <!-- cabecera/ -->
 </head>
@@ -470,7 +484,7 @@ p { margin: 0; }
           </ul>
           <div class="precio" style="gap: 16px;">
             <span class="prueba">20 días de prueba gratis</span>
-            <a class="boton boton-principal" href="https://yosoyisraelmichaca-design.github.io/pos-web/?comprar=gerente">Comprar Caja</a>
+            <a class="boton boton-principal" data-plan="gerente" data-nombre="Caja" data-total="$348" data-desglose="$300 MXN + IVA" href="https://yosoyisraelmichaca-design.github.io/pos-web/?comprar=gerente">Comprar Caja</a>
             <a class="boton boton-borde" href="https://yosoyisraelmichaca-design.github.io/pos-web/">Solicitar prueba gratis</a>
           </div>
         </article>
@@ -489,7 +503,7 @@ p { margin: 0; }
           </ul>
           <div class="precio" style="gap: 16px;">
             <span class="prueba">7 días de prueba gratis</span>
-            <a class="boton boton-principal" href="https://yosoyisraelmichaca-design.github.io/pos-web/?comprar=manager">Comprar Gerente</a>
+            <a class="boton boton-principal" data-plan="manager" data-nombre="Gerente" data-total="$580" data-desglose="$500 MXN + IVA" href="https://yosoyisraelmichaca-design.github.io/pos-web/?comprar=manager">Comprar Gerente</a>
             <a class="boton boton-borde" href="https://yosoyisraelmichaca-design.github.io/pos-web/">Solicitar prueba gratis</a>
           </div>
         </article>
@@ -508,13 +522,13 @@ p { margin: 0; }
           </ul>
           <div class="precio" style="gap: 16px;">
             <span class="prueba">15 días de prueba gratis</span>
-            <a class="boton boton-principal" href="https://yosoyisraelmichaca-design.github.io/pos-web/?comprar=maestra">Comprar Maestra</a>
+            <a class="boton boton-principal" data-plan="maestra" data-nombre="Maestra" data-total="$928" data-desglose="$800 MXN + IVA" href="https://yosoyisraelmichaca-design.github.io/pos-web/?comprar=maestra">Comprar Maestra</a>
             <a class="boton boton-borde" href="https://yosoyisraelmichaca-design.github.io/pos-web/">Solicitar prueba gratis</a>
           </div>
         </article>
       </div>
       <p class="planes-nota">Precios en pesos mexicanos; el total ya incluye IVA del 16%. La licencia dura 30 días naturales y cubre a todos los usuarios y negocios de tu cuenta. Si pagas después del vencimiento se suma un recargo del 10%.</p>
-      <p class="planes-nota">Al comprar pagas con Mercado Pago (tarjeta, OXXO o transferencia) y entras al momento: tu cuenta queda activa 3 días mientras confirmamos tu pago y después recibes tu licencia de 30 días. Ahí mismo puedes descargar la app para computadora con Windows, que se actualiza sola. La prueba gratis se solicita con tus datos y la aprobamos nosotros.</p>
+      <p class="planes-nota">Al comprar pagas con Mercado Pago (tarjeta, OXXO o transferencia) y entras al momento: tu cuenta queda activa 3 días mientras confirmamos tu pago y después recibes tu licencia de 30 días. Ahí mismo puedes descargar la <a href="descargar.html">app para computadora con Windows</a>, que se actualiza sola. La prueba gratis se solicita con tus datos y la aprobamos nosotros.</p>
     </div>
   </section>
 
@@ -540,7 +554,7 @@ p { margin: 0; }
       </div>
       <div class="preguntas">
         <details><summary>¿Necesito comprar equipo especial?</summary><p>No. Funciona en el navegador de cualquier computadora o celular, y también como aplicación de Windows. Si tienes lector de código de barras o impresora de tickets de 80 mm, los puedes usar.</p></details>
-        <details><summary>¿Hay aplicación para descargar en el celular?</summary><p>No hace falta. En el celular el sistema se usa desde el navegador, como Chrome o Safari: entras a la página, inicias sesión y listo. La aplicación para descargar solo existe para computadoras con Windows.</p></details>
+        <details><summary>¿Hay aplicación para descargar en el celular?</summary><p>No hace falta. En el celular el sistema se usa desde el navegador, como Chrome o Safari: entras a la página, inicias sesión y listo. La aplicación para descargar solo existe para computadoras con Windows: <a href="descargar.html">descárgala aquí</a>.</p></details>
         <details><summary>¿Qué pasa si no tengo internet?</summary><p>Sigues vendiendo. Las ventas se guardan en tu equipo y se envían solas cuando vuelve la conexión. Conéctate al menos cada pocos días para que tu licencia se valide.</p></details>
         <details><summary>¿Qué pasa si no pago a tiempo?</summary><p>Tienes 5 días de tolerancia con un aviso amarillo en pantalla. Si pagas en ese tiempo se suma un recargo del 10%. Después la licencia se desactiva, pero tus datos se conservan para cuando renueves.</p></details>
         <details><summary>¿Puedo cambiar de plan?</summary><p>Sí. Si tu negocio crece, pasa de Caja a Gerente o a Maestra y conservas toda tu información.</p></details>
@@ -568,6 +582,29 @@ p { margin: 0; }
   </div>
 </footer>
 
+<dialog class="ventana" id="ventana-compra" aria-labelledby="ventana-titulo">
+  <div class="ventana-cuerpo">
+    <div class="ventana-cabeza">
+      <div><span class="etiqueta">Comprar licencia</span><h2 id="ventana-titulo">Plan</h2></div>
+      <button class="cerrar-ventana" type="button" aria-label="Cerrar" data-cerrar>×</button>
+    </div>
+    <div class="ventana-total">
+      <div class="monto" id="ventana-monto"></div>
+      <div class="detalle"><span id="ventana-desglose"></span> · cada 30 días · IVA incluido</div>
+    </div>
+    <ol class="ventana-pasos">
+      <li>Entra al sistema y crea tu cuenta con tu correo.</li>
+      <li id="ventana-paso-pago">Paga con Mercado Pago (tarjeta, OXXO o transferencia).</li>
+      <li>Tu cuenta queda activa 3 días mientras confirmamos tu pago; después recibes tu licencia de 30 días.</li>
+      <li>Descarga la app para computadora desde la <a href="descargar.html">página de descarga</a>.</li>
+    </ol>
+    <div class="ventana-acciones">
+      <a class="boton boton-principal" id="ventana-continuar" href="https://yosoyisraelmichaca-design.github.io/pos-web/">Continuar al sistema</a>
+      <button class="boton boton-borde" type="button" data-cerrar>Cancelar</button>
+    </div>
+  </div>
+</dialog>
+
 <script src="js/gsap.min.js"></script>
 <script src="js/ScrollTrigger.min.js"></script>
 <script>
@@ -586,6 +623,27 @@ p { margin: 0; }
       var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
     }
   });
+
+
+  // Ventana de compra: muestra el plan y el total antes de ir al sistema.
+  // Sin JavaScript el botón "Comprar" lleva directo al sistema.
+  var ventana = document.getElementById('ventana-compra');
+  if (ventana && typeof ventana.showModal === 'function') {
+    Array.prototype.forEach.call(document.querySelectorAll('a[data-plan]'), function (a) {
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.getElementById('ventana-titulo').textContent = 'Plan ' + a.getAttribute('data-nombre');
+        document.getElementById('ventana-monto').textContent = a.getAttribute('data-total') + ' MXN';
+        document.getElementById('ventana-desglose').textContent = a.getAttribute('data-desglose');
+        document.getElementById('ventana-continuar').href = a.href;
+        ventana.showModal();
+      });
+    });
+    Array.prototype.forEach.call(ventana.querySelectorAll('[data-cerrar]'), function (b) {
+      b.addEventListener('click', function () { ventana.close(); });
+    });
+    ventana.addEventListener('click', function (e) { if (e.target === ventana) ventana.close(); });
+  }
 
   var reducir = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (!window.gsap || reducir) return;

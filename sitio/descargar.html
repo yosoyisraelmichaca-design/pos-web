@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Descargar para Windows · Control Total POS</title>
+<meta name="description" content="Descarga Control Total POS para computadoras con Windows. Funciona aunque se vaya el internet y se actualiza sola.">
+<style>
+@font-face { font-family: "Manrope"; src: url("fuentes/Manrope-Regular.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Manrope"; src: url("fuentes/Manrope-Bold.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "Manrope"; src: url("fuentes/Manrope-ExtraBold.woff2") format("woff2"); font-weight: 800; font-display: swap; }
+:root { --papel:#f3f6f5; --tinta:#10302b; --suave:#4a6360; --linea:#d5e0dd; --marca:#0b7a6b; --sobre:#fff; --sup:#fff; --promo:#f2b33d; }
+@media (prefers-color-scheme: dark) { :root { --papel:#0c1715; --tinta:#e3eeeb; --suave:#9db4af; --linea:#243935; --marca:#3cc2ac; --sobre:#04211c; --sup:#12211e; color-scheme: dark; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--papel); color:var(--tinta); font:17px/1.65 "Manrope", system-ui, sans-serif; }
+main { max-width:760px; margin:0 auto; padding:32px max(16px, env(safe-area-inset-left,0px)) 80px; }
+.volver { display:inline-block; margin-bottom:24px; color:var(--marca); font-weight:700; text-decoration:none; }
+h1 { font-size:clamp(30px,5vw,42px); line-height:1.15; font-weight:800; letter-spacing:-.02em; margin:0 0 8px; }
+h2 { font-size:22px; font-weight:800; margin:40px 0 12px; }
+p { margin: 0 0 12px; }
+.suave { color: var(--suave); }
+.tarjeta { background:var(--sup); border:1px solid var(--linea); border-radius:16px; padding:24px; margin-top:24px; display:grid; gap:12px; }
+.boton { display:inline-flex; align-items:center; justify-content:center; gap:8px; min-height:56px; padding:0 28px; border-radius:999px;
+  background:var(--marca); color:var(--sobre); font-weight:700; font-size:18px; text-decoration:none; justify-self:start; }
+.boton:focus-visible { outline:3px solid var(--promo); outline-offset:3px; }
+ol { padding-left: 22px; } li { margin: 6px 0; }
+.nota { border-left:4px solid var(--promo); background:var(--sup); padding:12px 16px; border-radius:0 12px 12px 0; }
+</style>
+</head>
+<body>
+<main>
+<a class="volver" href="./">← Volver a Control Total POS</a>
+<h1>Control Total POS para Windows</h1>
+<p class="suave">Cobra desde tu computadora aunque se vaya el internet. La app se actualiza sola cuando hay versiones nuevas.</p>
+
+<div class="tarjeta">
+  <a class="boton" href="../descargas/windows/ControlTotalPOS-Setup.exe" download>⬇ Descargar para Windows</a>
+  <p class="suave" id="version">Instalador para Windows 10 y 11 (64 bits).</p>
+</div>
+
+<h2>Cómo instalarla</h2>
+<ol>
+  <li>Toca <b>Descargar para Windows</b> y abre el archivo <b>ControlTotalPOS-Setup.exe</b> cuando termine de bajar.</li>
+  <li>Si Windows muestra «Windows protegió su PC», toca <b>Más información</b> y después <b>Ejecutar de todas formas</b>.</li>
+  <li>Sigue los pasos del instalador. No pide permisos de administrador.</li>
+  <li>Abre <b>Control Total POS</b> desde el escritorio o el menú Inicio y entra con el mismo correo y contraseña de tu cuenta.</li>
+</ol>
+
+<p class="nota">El aviso de Windows aparece porque la app todavía no tiene firma digital de Microsoft. Descárgala solo desde esta página.</p>
+
+<h2>Actualizaciones</h2>
+<p>Cuando hay una versión nueva, la app muestra una barra azul con el botón <b>Actualizar</b>. Se descarga, se instala y se vuelve a abrir sola. Tus datos no se tocan.</p>
+
+<h2>¿Usas celular o tableta?</h2>
+<p>No necesitas descargar nada: entra al <a href="../">sistema desde el navegador</a>.</p>
+</main>
+<script>
+// Muestra la versión publicada (si no carga, queda el texto de arriba).
+fetch('../descargas/windows/version.json?t=' + Date.now()).then(function (r) { return r.json(); }).then(function (d) {
+  if (/^\d+\.\d+\.\d+$/.test(d.version)) document.getElementById('version').textContent =
+    'Versión ' + d.version + ' · Instalador para Windows 10 y 11 (64 bits).';
+}).catch(function () {});
+</script>
+</body>
+</html>
