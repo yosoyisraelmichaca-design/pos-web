@@ -180,10 +180,8 @@ p { margin: 0; }
 .funcion p { color: var(--tinta-suave); font-size: 15.5px; }
 .icono { width: 40px; height: 40px; border-radius: 10px; display: grid; place-items: center; background: color-mix(in srgb, var(--marca) 12%, transparent); color: var(--marca); }
 .icono svg { width: 22px; height: 22px; }
-/* 7 tarjetas: la última ocupa dos espacios para no dejar un hueco (4 y 2 columnas). */
-.funciones > .funcion:last-of-type { grid-column: span 2; }
 @media (max-width: 960px) { .funciones { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 560px) { .funciones { grid-template-columns: 1fr; } .funciones > .funcion:last-of-type { grid-column: auto; } }
+@media (max-width: 560px) { .funciones { grid-template-columns: 1fr; } }
 
 /* Sin internet */
 .sin-red { background: var(--banda); color: var(--banda-tinta); }
@@ -416,13 +414,11 @@ p { margin: 0; }
           <h3>Varios negocios, una cuenta</h3>
           <p>Administra todas tus sucursales desde una sola cuenta y ve sus ingresos y egresos juntos en la página principal.</p>
         </article>
-        <!-- "Publica en estados" oculta hasta que se reactive (Israel, 2026-10-16).
         <article class="funcion revelar">
           <span class="icono" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg></span>
           <h3>Publica en estados</h3>
           <p>Arma una imagen con la foto, el precio o la promoción y compártela en WhatsApp, Facebook o Instagram.</p>
         </article>
-        -->
       </div>
     </div>
   </section>
