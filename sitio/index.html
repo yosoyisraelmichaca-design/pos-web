@@ -184,6 +184,10 @@ p { margin: 0; }
 .funcion .solo-maestra { justify-self: start; font-size: 12px; font-weight: 700; padding: 2px 10px; border-radius: 999px; background: color-mix(in srgb, var(--promo) 22%, transparent); color: var(--tinta); }
 @media (max-width: 960px) { .funciones { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 560px) { .funciones { grid-template-columns: 1fr; } }
+.ventajas { display: grid; gap: 14px; padding: 0; margin: 0; list-style: none; color: var(--tinta-suave); font-size: 16.5px; }
+.ventajas li { display: grid; grid-template-columns: 22px 1fr; gap: 10px; }
+.ventajas li::before { content: "✓"; font-weight: 800; color: var(--marca); }
+.ventajas strong { color: var(--tinta); }
 .demo-video { width: min(360px, 100%); aspect-ratio: 9 / 16; height: auto; display: block; justify-self: center; border-radius: 20px; background: var(--banda); box-shadow: var(--sombra); }
 
 /* Sin internet */
@@ -437,10 +441,20 @@ p { margin: 0; }
 
   <section class="seccion" id="video" style="padding-top: 0;">
     <div class="envoltura sin-red-grid">
-      <div class="seccion-cabeza revelar" style="margin-bottom: 0;">
-        <span class="etiqueta">Míralo en acción</span>
-        <h2>Tres minutos, ocho negocios</h2>
-        <p>Una carnicería que vende por kilo, unos antojitos con fotos, una papelería con promociones, una barbería con agenda, un consultorio que cotiza, una farmacia que hace su corte, un gimnasio sin internet y una caja cobrando. Todo con el mismo sistema.</p>
+      <div class="revelar" style="display: grid; gap: 28px;">
+        <div class="seccion-cabeza" style="margin-bottom: 0;">
+          <span class="etiqueta">Hecho para tu negocio</span>
+          <h2>Pensado para el negocio propio, no para grandes cadenas</h2>
+          <p>Muchos sistemas de punto de venta están hechos para corporativos: caros, con contratos largos y llenos de cosas que no usas. Control Total POS está hecho para el dueño que atiende su propio negocio.</p>
+        </div>
+        <ul class="ventajas">
+          <li><span><strong>Sin contratos ni plazos forzosos.</strong> Pagas cada 30 días desde $348 con IVA y lo pruebas gratis antes de pagar.</span></li>
+          <li><span><strong>Sin comprar equipo.</strong> Funciona en la computadora o el celular que ya tienes, desde el navegador o la app de Windows.</span></li>
+          <li><span><strong>Todo en un solo sistema.</strong> Ventas, agenda, membresías, inventario y caja juntos, no en tres programas distintos.</span></li>
+          <li><span><strong>Listo para tu giro.</strong> Tiendas, comida, servicios y consultorios arrancan con productos y servicios de ejemplo.</span></li>
+          <li><span><strong>Vende aunque se vaya el internet.</strong> Las ventas se guardan y se envían solas al volver la conexión.</span></li>
+          <li><span><strong>Hecho en México.</strong> En español, en pesos y con promociones que muestran su vigencia, como pide Profeco.</span></li>
+        </ul>
       </div>
       <video class="demo-video" controls playsinline preload="none" poster="video/demo-completa.jpg" width="720" height="1280" aria-label="Video de demostración de Control Total POS">
         <source src="video/demo-completa.mp4" type="video/mp4">
