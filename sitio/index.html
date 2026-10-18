@@ -181,9 +181,10 @@ p { margin: 0; }
 .icono { width: 40px; height: 40px; border-radius: 10px; display: grid; place-items: center; background: color-mix(in srgb, var(--marca) 12%, transparent); color: var(--marca); }
 .icono svg { width: 22px; height: 22px; }
 /* 7 tarjetas: la última ocupa dos espacios para no dejar un hueco (4 y 2 columnas). */
-.funciones > .funcion:last-of-type { grid-column: span 2; }
+.funcion .solo-maestra { justify-self: start; font-size: 12px; font-weight: 700; padding: 2px 10px; border-radius: 999px; background: color-mix(in srgb, var(--promo) 22%, transparent); color: var(--tinta); }
 @media (max-width: 960px) { .funciones { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 560px) { .funciones { grid-template-columns: 1fr; } .funciones > .funcion:last-of-type { grid-column: auto; } }
+@media (max-width: 560px) { .funciones { grid-template-columns: 1fr; } }
+.demo-video { width: min(360px, 100%); aspect-ratio: 9 / 16; height: auto; display: block; justify-self: center; border-radius: 20px; background: var(--banda); box-shadow: var(--sombra); }
 
 /* Sin internet */
 .sin-red { background: var(--banda); color: var(--banda-tinta); }
@@ -302,6 +303,7 @@ p { margin: 0; }
     <a class="logo" href="#inicio" aria-label="Control Total POS, inicio"><svg class="logo-marca" viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M95.3 38.5 A46 46 0 1 0 101 75" stroke="currentColor" stroke-width="10" stroke-linecap="round"/><path d="M49.6 54.0 L42.2 47.2 L34.3 46.9 L30.3 41.6 L25.4 40.0 M59.0 48.0 L60.4 39.5 L56.2 33.8 L58.3 28.3 L56.9 24.1 M69.2 52.3 L78.1 47.7 L81.1 40.3 L87.5 38.4 L90.6 34.3 M70.4 66.0 L76.6 72.1 L83.6 71.9 L86.9 76.8 L91.2 78.0 M61.0 72.0 L59.7 81.9 L64.0 88.6 L62.0 94.9 L63.5 99.8 M50.8 67.7 L43.0 71.4 L40.8 78.1 L35.0 79.5 L32.4 83.1 M48.4 56.9 L39.5 52.2 L31.8 54.0 L26.5 49.9 L21.4 49.6" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity=".75"/><circle cx="60" cy="60" r="11.5" fill="currentColor"/><circle cx="101" cy="57" r="7.5" fill="#f2b33d"/></svg>Control Total POS</a>
     <nav class="menu" aria-label="Principal">
       <a href="#funciones">Funciones</a>
+      <a href="#video">Video</a>
       <a href="#sin-internet">Sin internet</a>
       <a href="#planes">Planes</a>
       <a href="#preguntas">Preguntas</a>
@@ -416,6 +418,12 @@ p { margin: 0; }
           <h3>Varios negocios, una cuenta</h3>
           <p>Administra todas tus sucursales desde una sola cuenta y ve sus ingresos y egresos juntos en la página principal.</p>
         </article>
+        <article class="funcion revelar">
+          <span class="icono" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></span>
+          <h3>Cotizaciones en PDF</h3>
+          <p>Arma presupuestos con tu catálogo, cambia precios solo en la cotización y entrégala en PDF con 30 días de vigencia. Al aceptarla, se cobra en la caja.</p>
+          <span class="solo-maestra">Incluida en la licencia Maestra</span>
+        </article>
         <!-- "Publica en estados" oculta hasta que se reactive (Israel, 2026-10-16).
         <article class="funcion revelar">
           <span class="icono" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg></span>
@@ -424,6 +432,20 @@ p { margin: 0; }
         </article>
         -->
       </div>
+    </div>
+  </section>
+
+  <section class="seccion" id="video" style="padding-top: 0;">
+    <div class="envoltura sin-red-grid">
+      <div class="seccion-cabeza revelar" style="margin-bottom: 0;">
+        <span class="etiqueta">Míralo en acción</span>
+        <h2>Tres minutos, ocho negocios</h2>
+        <p>Una carnicería que vende por kilo, unos antojitos con fotos, una papelería con promociones, una barbería con agenda, un consultorio que cotiza, una farmacia que hace su corte, un gimnasio sin internet y una caja cobrando. Todo con el mismo sistema.</p>
+      </div>
+      <video class="demo-video" controls playsinline preload="none" poster="video/demo-completa.jpg" width="720" height="1280" aria-label="Video de demostración de Control Total POS">
+        <source src="video/demo-completa.mp4" type="video/mp4">
+        <a href="video/demo-completa.mp4">Ver el video de demostración</a>
+      </video>
     </div>
   </section>
 
@@ -472,7 +494,7 @@ p { margin: 0; }
       <div class="seccion-cabeza revelar">
         <span class="etiqueta">Planes</span>
         <h2>Paga cada 30 días, sin plazos forzosos</h2>
-        <p>Todos los planes incluyen todas las funciones. Cambia el tamaño: cuántos negocios, personas y clientes manejas.</p>
+        <p>Todos los planes incluyen ventas, agenda, inventario, caja y reportes. Cambia el tamaño: cuántos negocios, personas y clientes manejas. La Maestra suma cotizaciones en PDF.</p>
       </div>
       <div class="planes">
         <article class="plan revelar">
@@ -525,6 +547,7 @@ p { margin: 0; }
             <li><span><b>4</b> gerentes y <b>6</b> correos de caja</span></li>
             <li><span><b>100</b> clientes por negocio</span></li>
             <li><span>Calendario de dinero neto de cada mes</span></li>
+            <li><span>Cotizaciones en PDF</span></li>
           </ul>
           <div class="precio" style="gap: 16px;">
             <span class="prueba">15 días de prueba gratis</span>
@@ -545,7 +568,7 @@ p { margin: 0; }
         <h2>Tus datos, bajo tu control</h2>
       </div>
       <div class="confianza">
-        <div class="revelar"><h3>Tus fotos se quedan en tu equipo</h3><p>Las fotos de productos, tickets y comprobantes se guardan solo en tu computadora o en el navegador de tu celular. No se suben a la nube.</p></div>
+        <div class="revelar"><h3>Tus fotos, protegidas</h3><p>Las fotos de productos y servicios van a un almacén privado que solo ve tu negocio, con copia en tu equipo para vender sin internet. Los comprobantes y gastos se quedan solo en tu equipo.</p></div>
         <div class="revelar"><h3>Cada quien ve lo suyo</h3><p>Cada persona entra con su propio correo y solo ve los negocios y apartados que su puesto le permite.</p></div>
         <div class="revelar"><h3>Protección contra abusos</h3><p>Límites de uso por plan, contraseñas de al menos 10 caracteres y aviso al dueño cuando se crea un correo nuevo.</p></div>
       </div>
